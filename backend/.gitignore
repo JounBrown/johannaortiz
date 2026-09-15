@@ -1,0 +1,43 @@
+.env
+/node_modules
+node_modules/
+.env.test
+
+# Archivos de logs y de depuración
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs directory (keep structure but ignore log files)
+logs/*.log
+logs/*.gz
+
+# Carpeta de cobertura de pruebas
+/coverage
+
+# Ignorar la carpeta completa del frontend
+/../frontend/
+
+/frontend/node_modules
+
+
+public/uploads/
+
+
+*.log
+
+pnpm-lock.yaml
+
+
+.vscode
+.github
+
+
+.env.example
+
+
+README.md
+
+shared/utils/LOGGER_README.md
+
+shared/utils/MEMORY_MONITOR_README.md
