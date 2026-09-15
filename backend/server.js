@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3001;
 
 const startServer = async () => {
   if (process.env.NODE_ENV !== "production") {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync();
   }
 
   const server = app.listen(PORT, () => {

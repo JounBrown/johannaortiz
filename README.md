@@ -25,6 +25,11 @@ Una vez que el contenedor esté corriendo, importa la estructura de la base de d
 sudo docker exec -i mysql-prueba mysql -uroot -proot johannaortiz < schema.sql
 ```
 
+Comandos útiles para gestionar el contenedor:
+- **Detener** la base de datos: `sudo docker stop mysql-prueba`
+- **Iniciar** la base de datos: `sudo docker start mysql-prueba`
+- **Reiniciar** la base de datos: `sudo docker restart mysql-prueba`
+
 ---
 
 ## 2. Configuración del Backend
