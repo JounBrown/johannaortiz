@@ -13,21 +13,29 @@ El proyecto consta de una base de datos en MySQL, un API backend construido con 
 
 ## 1. Configuración de la Base de Datos (MySQL)
 
-Se utiliza Docker para levantar la base de datos MySQL de forma rápida. Ejecuta el siguiente comando en la raíz del proyecto para iniciar el contenedor:
+Puedes configurar la base de datos de dos maneras, dependiendo de tus herramientas locales:
+
+### Opción A: Instalación Local de MySQL
+1. Crea una base de datos en tu servidor MySQL local llamada `johannaortiz`.
+2. Ejecuta el archivo `schema.sql` (ubicado en la raíz de este proyecto) en tu gestor de base de datos para crear la tabla e insertar los registros iniciales.
+3. Asegúrate de que las credenciales en el archivo `.env` del backend coincidan con tu usuario y contraseña locales.
+
+### Opción B: Usando Docker (Alternativa rápida)
+Si tienes Docker instalado, puedes levantar la base de datos ejecutando el siguiente comando en la raíz del proyecto para iniciar el contenedor:
 
 ```bash
-sudo docker run --name mysql-prueba -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=johannaortiz -p 3306:3306 -d mysql:8.0
+docker run --name mysql-prueba -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=johannaortiz -p 3306:3306 -d mysql:8.0
 ```
 
 Una vez que el contenedor esté corriendo, importa la estructura de la base de datos y los datos iniciales utilizando el archivo `schema.sql` provisto:
 
 ```bash
-sudo docker exec -i mysql-prueba mysql -uroot -proot johannaortiz < schema.sql
+docker exec -i mysql-prueba mysql -uroot -proot johannaortiz < schema.sql
 ```
 
 Comandos útiles para gestionar el contenedor:
-- **Detener** la base de datos: `sudo docker stop mysql-prueba`
-- **Iniciar** la base de datos: `sudo docker start mysql-prueba`
+- **Detener** la base de datos: `docker stop mysql-prueba`
+- **Iniciar** la base de datos: `docker start mysql-prueba`
 - **Reiniciar** la base de datos: `sudo docker restart mysql-prueba`
 
 ---
